@@ -85,6 +85,41 @@ document.addEventListener("DOMContentLoaded", () => {
     if (tabId === "animations") {
       triggerCounterSimulation();
     }
+
+    // Auto-close mobile sidebar drawer when switching tabs
+    closeSidebar();
+  }
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // 2B. MOBILE SIDEBAR NAVIGATION TOGGLE
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  const mobileSidebar = document.getElementById("lab-sidebar");
+  const mobileOverlay = document.getElementById("sidebar-overlay");
+  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+  const mobileCloseBtn = document.getElementById("mobile-close-btn");
+
+  if (mobileMenuToggle && mobileSidebar && mobileOverlay) {
+    mobileMenuToggle.addEventListener("click", () => {
+      mobileSidebar.classList.add("open");
+      mobileOverlay.classList.add("open");
+      document.body.style.overflow = "hidden"; // Prevent background scroll
+    });
+  }
+
+  function closeSidebar() {
+    if (mobileSidebar && mobileOverlay) {
+      mobileSidebar.classList.remove("open");
+      mobileOverlay.classList.remove("open");
+      document.body.style.overflow = ""; // Restore background scroll
+    }
+  }
+
+  if (mobileCloseBtn) {
+    mobileCloseBtn.addEventListener("click", closeSidebar);
+  }
+
+  if (mobileOverlay) {
+    mobileOverlay.addEventListener("click", closeSidebar);
   }
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

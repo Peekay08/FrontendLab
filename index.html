@@ -25,8 +25,14 @@
   <div class="lab-container">
 
     <!-- ═══ SIDEBAR NAVIGATION (Dashboard Control) ═══ -->
-    <aside class="lab-sidebar" aria-label="Laboratory control panel">
+    <aside class="lab-sidebar" id="lab-sidebar" aria-label="Laboratory control panel">
       <div class="sidebar-header">
+        <button class="mobile-close-btn" id="mobile-close-btn" aria-label="Close Navigation Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="close-icon">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
         <a href="https://peekay08.github.io/Portfolio/" class="back-link" aria-label="Return to portfolio home">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-back">
             <polyline points="15 18 9 12 15 6"></polyline>
@@ -84,12 +90,22 @@
       </div>
     </aside>
 
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
     <!-- ═══ MAIN WORKSPACE (Tab Content Area) ═══ -->
     <main class="lab-workspace" id="lab-workspace" tabindex="-1">
       
       <!-- TOP STATUS BAR -->
       <header class="workspace-header">
         <div class="header-breadcrumbs" id="breadcrumbs">
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Navigation Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="menu-icon">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
           <span class="breadcrumb-root">LABS</span>
           <span class="breadcrumb-separator">/</span>
           <span class="breadcrumb-current" id="current-crumb">DASHBOARD HOME</span>
