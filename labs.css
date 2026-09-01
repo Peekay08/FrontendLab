@@ -1456,7 +1456,6 @@ button { font-family: inherit; font-size: inherit; color: inherit; }
 @media (max-width: 900px) {
   .lab-container { 
     flex-direction: row; 
-    overflow: hidden;
   }
   
   .lab-sidebar { 
